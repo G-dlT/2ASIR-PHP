@@ -18,13 +18,13 @@
                     // Incluir el archivo de conexión
                     include('../includes/conexion.php');
 
-                    // Obtener las asignaturas colectivas
-                    $sql_asignaturas = "SELECT id_asignatura, nombre FROM Asignaturas ";
+                    // Obtener las asignaturas colectivas con su nivel
+                    $sql_asignaturas = "SELECT id_asignatura, nombre, nivel FROM Asignaturas WHERE tipo = 'Colectiva'";
                     $resultado_asignaturas = mysqli_query($conexion, $sql_asignaturas);
 
                     // Mostrar las asignaturas en el select
                     while ($asignatura = mysqli_fetch_assoc($resultado_asignaturas)) {
-                        echo "<option value='" . $asignatura['id_asignatura'] . "'>" . $asignatura['nombre'] . "</option>";
+                        echo "<option value='" . $asignatura['id_asignatura'] . "'>" . $asignatura['nombre'] . " - Nivel " . $asignatura['nivel'] . "</option>";
                     }
                     ?>
                 </select>

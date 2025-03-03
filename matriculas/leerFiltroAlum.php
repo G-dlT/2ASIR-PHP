@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Alumnos</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
 
 <?php
 // Incluir el archivo de conexión
-include('conexion.php');
+include('../includes/conexion.php');
 
 // Inicializar la consulta
 $sql = "SELECT * FROM Alumnos WHERE 1=1"; // 1=1 para facilitar la concatenación de condiciones
@@ -84,6 +84,6 @@ if (mysqli_num_rows($resultado) > 0) {
 
 
 
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -6,13 +6,13 @@
     <title>Matricular Alumno</title>
     
     <!-- Link al CSS de Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container mt-5">
 
 <?php
 // Incluir el archivo de conexión
-include('conexion.php');
+include('../includes/conexion.php');
 
 // Verificar si se han enviado los datos del formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (mysqli_query($conexion, $sql)) {
         echo "<div class='container mt-4'>";
         echo "<div class='alert alert-success' role='alert'>Matrícula insertada correctamente.</div>";
-        echo "<a href='insertarMatricula.php' class='btn btn-secondary'>Volver a Insertar</a>";
+        echo "<a href='matrAlum2.php' class='btn btn-secondary'>Volver a Insertar</a>";
         echo "</div>";
     } else {
         echo "<div class='container mt-4'>";
@@ -38,10 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Cerrar conexión
-mysqli_close($conexion);
+// mysqli_close($conexion);
 ?>
 
 
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

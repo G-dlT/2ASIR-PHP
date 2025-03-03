@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Alumnos por Especialidad</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-4">
@@ -22,7 +22,7 @@
                     <option value="">Seleccione una especialidad</option>
                     <?php
                     // Incluir el archivo de conexión
-                    include('conexion.php');
+                    include('../includes/conexion.php');
 
                     // Obtener las especialidades
                     $sql_especialidades = "SELECT id_especialidad, nombre FROM Especialidades";
@@ -39,10 +39,10 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-success">Buscar</button>
-            <a href="opciones.php" class="btn btn-secondary">Volver a Opciones</a>
+            
         </form>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

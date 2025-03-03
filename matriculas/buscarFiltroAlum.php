@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Alumnos</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-4">
+    <div class="container ">
         <h2 class="text-center mb-4">Buscar Alumnos</h2>
 
         <!-- Formulario para buscar alumno por cada una de las columnas de la tabla alumnos -->
@@ -37,6 +37,6 @@
         </form>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -6,13 +6,13 @@
     <title>Matricular Alumno</title>
     
     <!-- Link al CSS de Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container mt-5">
 
 <?php
 // Incluir el archivo de conexión
-include('conexion.php');
+include('../includes/conexion.php');
 
 // Compruebo que he entrado en introducir.php por llamada POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -74,12 +74,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="form-group">
                     <label for="f_id_especialidad">Especialidad:</label>
                     <select class="form-control" id="f_id_especialidad" name="f_id_especialidad" required>
-                        <option value="1">Piano</option>
-                        <option value="2">Guitarra</option>
-                        <option value="3">Clarinete</option>
-                        <option value="4">Flauta</option>
-                        <option value="5">Saxofón</option>
-                    </select>
+                    <option value="">Seleccione una especialidad</option>
+                    <?php
+                    // Incluir el archivo de conexión
+                    // include('../includes/conexion.php');
+
+                    // Obtener las especialidades
+                    $sql_especialidades = "SELECT id_especialidad, nombre FROM Especialidades";
+                    $resultado_especialidades = mysqli_query($conexion, $sql_especialidades);
+
+                    // Mostrar las especialidades en el select
+                    while ($especialidad = mysqli_fetch_assoc($resultado_especialidades)) {
+                        echo "<option value='" . $especialidad['id_especialidad'] . "'>" . $especialidad['nombre'] . "</option>";
+                    }
+
+                    // Cerrar conexión
+                    // mysqli_close($conexion);
+                    ?>
+                </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Matricular Alumno</button>
@@ -96,11 +108,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Cerrar conexión
-    mysqli_close($conexion);
+    // mysqli_close($conexion);
 }
 ?>
 
 <!-- Scripts de Bootstrap -->
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

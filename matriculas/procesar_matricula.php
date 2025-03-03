@@ -6,14 +6,14 @@
     <title>Matricular Alumno</title>
     
     <!-- Link al CSS de Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container mt-5">
 
 
 <?php
 // Incluir el archivo de conexión
-include('conexion.php');
+include('../includes/conexion.php');
 
 // Comprobar si se han enviado los datos del formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -56,10 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             Nivel: $nivel <br>
             Curso Escolar: $curso_escolar <br>
             Especialidad: $nombre_especialidad</div>";
-            echo '<a href="landmin.php" class="btn btn-secondary">Volver a Inicio</a>';
+            echo '<a href="intDatosAlum.php" class="btn btn-secondary">Ingresar nuevo alumno</a>';
         } else {
             echo "<div class='alert alert-danger' role='alert'>Error al matricular al alumno: " . mysqli_error($conexion) . "</div>";
-            echo '<a href="landmin.php" class="btn btn-secondary">Volver a Inicio</a>';
+            echo '<a href="intDatosAlum.php" class="btn btn-secondary">Ingresar nuevo alumno</a>';
         }
 
     } else {
@@ -72,6 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- Scripts de Bootstrap -->
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

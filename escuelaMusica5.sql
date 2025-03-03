@@ -40,10 +40,10 @@ CREATE TABLE Asignaturas (
     nombre VARCHAR(100) NOT NULL,
     nivel TINYINT NOT NULL,
     tipo ENUM('Individual', 'Colectiva') NOT NULL,
-    id_profesor INT,
+    id_profesor INT DEFAULT 1,
     id_especialidad INT,
-    FOREIGN KEY (id_profesor) REFERENCES Profesores(id_profesor),
-    FOREIGN KEY (id_especialidad) REFERENCES Especialidades(id_especialidad)
+    FOREIGN KEY (id_profesor) REFERENCES Profesores(id_profesor) ON DELETE SET NULL,
+    FOREIGN KEY (id_especialidad) REFERENCES Especialidades(id_especialidad) ON DELETE SET NULL
 );
 
 -- Crear tabla de Matriculas
@@ -53,8 +53,8 @@ CREATE TABLE Matriculas (
     nivel TINYINT NOT NULL,
     curso_escolar VARCHAR(20) NOT NULL,
     id_especialidad INT,
-    FOREIGN KEY (id_alumno) REFERENCES Alumnos(id_alumno),
-    FOREIGN KEY (id_especialidad) REFERENCES Especialidades(id_especialidad)
+    FOREIGN KEY (id_alumno) REFERENCES Alumnos(id_alumno) ON DELETE CASCADE,
+    FOREIGN KEY (id_especialidad) REFERENCES Especialidades(id_especialidad) ON DELETE SET NULL
 );
 
 -- Crear tabla de Asignaciones
@@ -62,8 +62,8 @@ CREATE TABLE Asignaciones (
     id_asignacion INT AUTO_INCREMENT PRIMARY KEY,
     id_matricula INT,
     id_asignatura INT,
-    FOREIGN KEY (id_matricula) REFERENCES Matriculas(id_matricula),
-    FOREIGN KEY (id_asignatura) REFERENCES Asignaturas(id_asignatura)
+    FOREIGN KEY (id_matricula) REFERENCES Matriculas(id_matricula) ON DELETE CASCADE,
+    FOREIGN KEY (id_asignatura) REFERENCES Asignaturas(id_asignatura) ON DELETE SET NULL
 );
 
 /* -------TRIGGERS--------*/ 
@@ -156,15 +156,16 @@ DELIMITER ;
 
 -- Insertar datos de ejemplo en la tabla de Especialidades
 INSERT INTO Especialidades (nombre) VALUES
+('Todos'),
 ('Piano'),
 ('Guitarra'),
 ('Clarinete'),
 ('Flauta'),
-('Saxofón'),
-('Todos');
+('Saxofón');
 
 -- Insertar datos de ejemplo en la tabla de Profesores
 INSERT INTO Profesores (dni, nombre, apellidos, id_especialidad, telefono, email) VALUES
+('000000000', 'A determinar', '', 1, '123456001', 'default@example.com'),  -- por defecto
 ('12345678A', 'Carlos', 'González', 1, '123456001', 'carlos.gonzalez@example.com'),  -- Piano
 ('23456789B', 'María', 'López', 2, '123456002', 'maria.lopez@example.com'),          -- Guitarra
 ('34567890C', 'Fernando', 'Martínez', 3, '123456003', 'fernando.martinez@example.com'), -- Clarinete

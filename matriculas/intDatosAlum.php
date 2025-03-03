@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de conexión (si es necesario)
-include('conexion.php');
+include('../includes/conexion.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,7 +10,7 @@ include('conexion.php');
     <title>Introducir Alumno</title>
     
     <!-- Link al CSS de Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -58,12 +58,12 @@ include('conexion.php');
     </div>
     
     <button type="submit" class="btn btn-primary">Siguiente</button>
-    <a href="landmin.php" class="btn btn-secondary">Volver a Inicio</a>
+    
 </form>
 
 </div>
 
 <!-- Scripts de Bootstrap -->
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

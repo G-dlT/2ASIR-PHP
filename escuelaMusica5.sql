@@ -69,7 +69,14 @@ CREATE TABLE Asignaciones (
     FOREIGN KEY (id_matricula) REFERENCES Matriculas(id_matricula) ON DELETE CASCADE,
     FOREIGN KEY (id_asignatura) REFERENCES Asignaturas(id_asignatura) ON DELETE SET NULL
 );
-
+CREATE TABLE Usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    id_profesor INT NULL,  -- Relacionado con Profesores (NULL si es admin)
+    nombre_usuario VARCHAR(50) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL, -- Guardaremos el hash de la contraseña
+    rol ENUM('admin', 'profesor') NOT NULL, -- Para diferenciar roles
+    FOREIGN KEY (id_profesor) REFERENCES Profesores(id_profesor) ON DELETE SET NULL
+);
 
 /* -------TRIGGERS--------*/ 
 

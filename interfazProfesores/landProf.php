@@ -71,7 +71,7 @@ if (!$result_colectivas) {
                 <h1>Escuela de Música</h1>
                 <div>
                     <span class="me-3">Usuario: <?= htmlspecialchars($nombre_profesor) ?></span>
-                    <a href="../includes/cerrarSesion.php" class="btn btn-danger">Cerrar Sesión</a>
+                    <a href="../includes/cerrarSesion.php" class="btn btn-danger " >Cerrar Sesión</a>
                 </div>
             </div>
         </div>
@@ -84,13 +84,13 @@ if (!$result_colectivas) {
                 <li><strong>Tutorías</strong></li>
                 <?php while ($fila = mysqli_fetch_assoc($result_tutorias)) : ?>
                     <!-- Mostrar solo el nombre de la asignatura en tutorías -->
-                    <li><a href="#" onclick="changeIframeSrc('tutorias/listaTutor.php?nombre=<?= urlencode($fila['nombre']) ?>')"><?= $fila['nombre'] ?></a></li>
+                    <li><a href="#" onclick="changeIframeSrc('tutorias/listaTutor.php?nombre=<?= urlencode($fila['nombre']) ?>')" class="text-decoration-none"><?= $fila['nombre'] ?></a></li>
                     <?php endwhile; ?>
 
                 <li><strong>Colectivas</strong></li>
                 <?php while ($fila = mysqli_fetch_assoc($result_colectivas)) : ?>
                     <!-- Mostrar solo el nombre de la asignatura en colectivas -->
-                    <li><a href="#" onclick="changeIframeSrc('colectivas/listasColectivas.php?nombre=<?= $fila['nombre'] ?>')"><?= $fila['nombre'] ?></a></li>
+                    <li><a href="#" onclick="changeIframeSrc('colectivas/listasColectivas.php?nombre=<?= $fila['nombre'] ?>')" class="text-decoration-none"><?= $fila['nombre'] ?></a></li>
                 <?php endwhile; ?>
             </ul>
         </nav>

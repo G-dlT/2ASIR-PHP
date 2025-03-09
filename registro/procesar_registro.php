@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filtrar Asignaturas y Profesores</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
 <?php
 session_start();
-include 'includes/conexion.php'; // Incluye el archivo de conexión
+include '../includes/conexion.php'; // Incluye el archivo de conexión
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (mysqli_query($conexion, $sql_insert)) {
             // Redirigir a la página de login después de un registro exitoso
-            header("Location: login.php");
+            header("Location: ../login/login.php");
             exit();
         } else {
             echo "Error al registrar el usuario: " . mysqli_error($conexion);
@@ -48,6 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

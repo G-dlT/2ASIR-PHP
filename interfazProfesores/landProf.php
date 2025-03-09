@@ -71,7 +71,7 @@ if (!$result_colectivas) {
                 <h1>Escuela de Música</h1>
                 <div>
                     <span class="me-3">Usuario: <?= htmlspecialchars($nombre_profesor) ?></span>
-                    <a href="../cerrarSesion.php" class="btn btn-danger">Cerrar Sesión</a>
+                    <a href="../includes/cerrarSesion.php" class="btn btn-danger">Cerrar Sesión</a>
                 </div>
             </div>
         </div>

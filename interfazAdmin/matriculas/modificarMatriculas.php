@@ -10,7 +10,7 @@
 <body>
 
     <div class="container mt-4">
-        <h2>Matrícula de Alumnos Antiguos</h2>
+        <h2>Modificar Matrícula de Alumnos </h2>
         <div class="row">
             <div class="col-12">
                 <iframe src="buscarFiltroMatr.php" title="Buscar Alumno por Especialidad" style="width: 100%; height: 600px; border: none;"></iframe>

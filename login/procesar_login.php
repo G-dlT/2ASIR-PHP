@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrícula de Alumnos Antiguos</title>
     <!-- Link al CSS de Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
 <?php
 session_start();
-include 'includes/conexion.php';
+include '../includes/conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'];
@@ -32,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['nombre_usuario'] = $fila['nombre_usuario']; // Guardamos el Nombre de usuario
             // Redirigir al panel correspondiente
             if ($fila['rol'] == 'admin') {
-                header("Location: interfazAdmin/land2.php");
+                header("Location: ../interfazAdmin/land2.php");
             } else {
-                header("Location: interfazProfesores/landProf.php");
+                header("Location: ../interfazProfesores/landProf.php");
             }
             exit();
         } else {

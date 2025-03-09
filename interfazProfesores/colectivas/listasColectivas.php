@@ -12,7 +12,7 @@ $nombre_asignatura = $_GET['nombre'];
 
 // Asegúrate de que el profesor está autenticado
 if (!isset($_SESSION['id_profesor'])) {
-    header("Location: login.php");
+    header("Location: ../../login.php");
     exit();
 }
 

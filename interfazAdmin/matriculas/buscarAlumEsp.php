@@ -38,7 +38,7 @@
                     ?>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success">Buscar</button>
+            <button type="submit" class="btn btn-primary">Buscar</button>
             
         </form>
     </div>

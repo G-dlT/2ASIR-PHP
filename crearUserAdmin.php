@@ -1,12 +1,7 @@
 <?php
+// ESTE ARCHIVO SOLO CREA UN USUARIO ADMINISTRATIVO PARA LA INTERFAZ D
 // Configuración de la conexión a la base de datos
-$servidor = "localhost:3306"; // Nombre del servidor
-$usuario = "root";            // Usuario de la base de datos
-$contrasena = "root";         // Contraseña del usuario de la base de datos
-$nombre_base_datos = "escuelamusica5"; // Nombre de la base de datos
-
-// Establecer la conexión
-$conexion = mysqli_connect($servidor, $usuario, $contrasena, $nombre_base_datos);
+include('includes/conexion.php');
 
 // Verificar si la conexión fue exitosa
 if (!$conexion) {
@@ -16,7 +11,7 @@ if (!$conexion) {
 // Datos del usuario administrador
 $nombre_usuario = "admin";  // Nombre de usuario
 $contrasena_admin = "admin";  // Contraseña en texto claro
-$rol = "admin";  // Rol del usuario
+$rol = "admin";  // Rol del usuario: admin
 
 // Crear el hash de la contraseña
 $hashed_contrasena = password_hash($contrasena_admin, PASSWORD_DEFAULT);

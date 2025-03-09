@@ -22,44 +22,44 @@
                 <h1>Escuela de Música</h1>
                 <div>
                      <span class="me-3">Usuario: admin</span>
-                     <a href="../cerrarSesion.php" class="btn btn-danger">Cerrar Sesión</a>
+                     <a href="../includes/cerrarSesion.php" class="btn btn-danger">Cerrar Sesión</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="d-flex">
+    <div class="d-flex ">
         <!-- ---MENU LATERAL---  -->
-        <nav class="sidebar bg-light p-3" style="width: 250px; height: 100vh; position: fixed;">
+        <nav class="sidebar bg-light p-3" style="width: 250px; height: 100vh; position: fixed; margin-left: 15px; margin-top: 15px;">
             <h3>Matriculas</h3>
             <ul class="list-unstyled">
-                <li><a href="#" onclick="changeIframeSrc('matriculas/intDatosAlum.php')">Nuevo ingreso</a></li>
-                <li><a href="#" onclick="changeIframeSrc('matriculas/matriculasAlum2.php')">Alumno del centro</a></li>
-                <li><a href="#" onclick="changeIframeSrc('matriculas/buscarFiltroMatr.php')">Consultar matriculas</a></li>
-                <li><a href="#" onclick="changeIframeSrc('matriculas/modificarMatriculas.php')">Modificar matriculas</a></li>
-                <li><a href="#" onclick="changeIframeSrc('matriculas/eliminarMatricula.php')">Eliminar matriculas</a></li>
+                <li><a href="#" onclick="changeIframeSrc('matriculas/intDatosAlum.php')"        class="text-decoration-none ">Nuevo ingreso</a></li>
+                <li><a href="#" onclick="changeIframeSrc('matriculas/matriculasAlum2.php')"     class="text-decoration-none ">Alumno del centro</a></li>
+                <li><a href="#" onclick="changeIframeSrc('matriculas/buscarFiltroMatr.php')"    class="text-decoration-none ">Consultar matriculas</a></li>
+                <li><a href="#" onclick="changeIframeSrc('matriculas/modificarMatriculas.php')" class="text-decoration-none ">Modificar matriculas</a></li>
+                <li><a href="#" onclick="changeIframeSrc('matriculas/eliminarMatricula.php')"   class="text-decoration-none ">Eliminar matriculas</a></li>
             </ul>
 
             <h3>Alumnos</h3>
             <ul class="list-unstyled">
-                <li><a href="#" onclick="changeIframeSrc('matriculas/buscarFiltroAlum.php')">Consultar datos de Alumnos</a></li>
-                <li><a href="#" onclick="changeIframeSrc('alumnos/modificarDatosAlumnos.php')">Modificar datos de Alumnos</a></li>
-                <li><a href="#" onclick="changeIframeSrc('alumnos/eliminarAlumno.php')">Eliminar Alumnos</a></li>
+                <li><a href="#" onclick="changeIframeSrc('matriculas/buscarFiltroAlum.php')"    class="text-decoration-none ">Consultar datos de Alumnos</a></li>
+                <li><a href="#" onclick="changeIframeSrc('alumnos/modificarDatosAlumnos.php')"  class="text-decoration-none ">Modificar datos de Alumnos</a></li>
+                <li><a href="#" onclick="changeIframeSrc('alumnos/eliminarAlumno.php')"         class="text-decoration-none ">Eliminar Alumnos</a></li>
             </ul>
 
             <h3>Profesores</h3>
             <ul class="list-unstyled">
-                <li><a href="#" onclick="changeIframeSrc('profesores/crearFiltroProfesor.php')">Añadir Nuevo Profesores</a></li>
-                <li><a href="#" onclick="changeIframeSrc('profesores/buscarFiltroProf.php')">Consultar datos Profesores</a></li>
-                <li><a href="#" onclick="changeIframeSrc('profesores/modificarDatosProfes.php')">Modificar datos Profesores</a></li>
-                <li><a href="#" onclick="changeIframeSrc('profesores/eliminarDatosProfes.php')">Eliminar Profesores</a></li>
+                <li><a href="#" onclick="changeIframeSrc('profesores/crearFiltroProfesor.php')" class="text-decoration-none ">Añadir Nuevo Profesores</a></li>
+                <li><a href="#" onclick="changeIframeSrc('profesores/buscarFiltroProf.php')"    class="text-decoration-none ">Consultar datos Profesores</a></li>
+                <li><a href="#" onclick="changeIframeSrc('profesores/modificarDatosProfes.php')" class="text-decoration-none ">Modificar datos Profesores</a></li>
+                <li><a href="#" onclick="changeIframeSrc('profesores/eliminarDatosProfes.php')" class="text-decoration-none ">Eliminar Profesores</a></li>
             </ul>
 
             <h3>Asignaturas</h3>
             <ul class="list-unstyled">               
-                <li><a href="#" onclick="changeIframeSrc('asignaturas/listaFiltroAsigAlum.php')">Listados de Alumnos</a></li>
-                <li><a href="#" onclick="changeIframeSrc('asignaturas/listasFiltroAsigProf.php')">Listas Asignatura - Profesor </a></li>
-                <li><a href="#" onclick="changeIframeSrc('asignaturas/modificarProfesorAsignatura.php')">Asignar profesor a una asignatura</a></li>
+                <li><a href="#" onclick="changeIframeSrc('asignaturas/listaFiltroAsigAlum.php')"         class="text-decoration-none ">Listados de Alumnos</a></li>
+                <li><a href="#" onclick="changeIframeSrc('asignaturas/listasFiltroAsigProf.php')"        class="text-decoration-none ">Listas Asignatura - Profesor </a></li>
+                <li><a href="#" onclick="changeIframeSrc('asignaturas/modificarProfesorAsignatura.php')" class="text-decoration-none ">Asignar profesor a una asignatura</a></li>
             </ul>
         </nav>
         
@@ -79,3 +79,7 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
+ 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - Escuela de Música</title>
     <!-- Link al CSS de Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #f1f3f5;
@@ -82,7 +82,7 @@
                     <button type="submit" class="login-btn">Iniciar Sesión</button>
 
                     <!-- Botón de registro -->
-                    <a href="registroUsuarios.php" class="btn register-btn mt-3">Registrarse</a>
+                    <a href="../registro/registroUsuarios.php" class="btn register-btn mt-3">Registrarse</a>
                 </form>
 
                 <?php
@@ -101,6 +101,6 @@
     </div>
 
     <!-- Scripts de Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

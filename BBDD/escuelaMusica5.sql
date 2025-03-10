@@ -165,3 +165,26 @@ BEGIN
 END;
 //
 DELIMITER ;
+DELIMITER //
+
+CREATE TRIGGER validar_curso_escolar
+BEFORE INSERT ON Matriculas
+FOR EACH ROW
+BEGIN
+    DECLARE anio_inicio INT;
+    DECLARE anio_fin INT;
+
+    -- Extraer los años del curso escolar
+    SET anio_inicio = CAST(LEFT(NEW.curso_escolar, 4) AS UNSIGNED);
+    SET anio_fin = CAST(RIGHT(NEW.curso_escolar, 4) AS UNSIGNED);
+
+    -- Validar que el formato sea correcto (YYYY-YYYY+1)
+    IF NEW.curso_escolar NOT REGEXP '^[0-9]{4}-[0-9]{4}$' OR anio_fin <> anio_inicio + 1 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: El curso escolar debe tener el formato YYYY-YYYY+1.';
+    END IF;
+END;
+//
+
+DELIMITER ;
+

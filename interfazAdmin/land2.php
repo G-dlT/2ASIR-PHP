@@ -1,6 +1,16 @@
 <?php
-    session_start();
+session_start();
 
+// Asegurar que el usuario es admin
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
+    header("Location: ../login/login.php");
+    exit();
+}
+
+// Obtener el último inicio de sesión desde la cookie
+$userName = $_SESSION["nombre_usuario"];
+$ultimoLogin = "ultimo_inicio_" . $userName;
+$ultimo_inicio = isset($_COOKIE[$ultimoLogin]) ? $_COOKIE[$ultimoLogin] : "Primera vez o sin registros recientes.";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,6 +32,7 @@
                 <h1>Escuela de Música</h1>
                 <div>
                      <span class="me-3">Usuario: admin</span>
+                     <p class="text-muted small">Último inicio de sesión: <?= $ultimo_inicio ?></p>
                      <a href="../includes/cerrarSesion.php" class="btn btn-danger">Cerrar Sesión</a>
                 </div>
             </div>
@@ -30,7 +41,7 @@
 
     <div class="d-flex ">
         <!-- ---MENU LATERAL---  -->
-        <nav class="sidebar bg-light p-3" style="width: 250px; height: 100vh; position: fixed; margin-left: 15px; margin-top: 15px;">
+        <nav class="sidebar bg-light p-3" style="width: 250px; height: 100vh; position: fixed; margin-left: 15px; margin-top: 100px;">
             <h3>Matriculas</h3>
             <ul class="list-unstyled">
                 <li><a href="#" onclick="changeIframeSrc('matriculas/intDatosAlum.php')"        class="text-decoration-none ">Nuevo ingreso</a></li>
@@ -65,7 +76,7 @@
         
         <!-- ---iframe "BODY"--- -->
         <div class="container-fluid" style="margin-left: 270px; margin-top: 60px; padding: 20px;">
-            <iframe id="contentFrame" class="w-100 vh-100 border-0 rounded shadow" src="https://www.miconservatorio.es/manuelcastillo"></iframe>
+            <iframe id="contentFrame" class="w-100 vh-100 border-0 rounded shadow" src="https://www.miconservatorio.es/manuelcastillo" style="margin-top:100px;"></iframe>
         </div>
     </div>
 

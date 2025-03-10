@@ -1,5 +1,20 @@
 <?php
+
+
 session_start();
+
+// Asegurar que el usuario es admin
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
+    header("Location: ../login/login.php");
+    exit();
+}
+
+// Obtener el último inicio de sesión desde la cookie
+$userName = $_SESSION["nombre_usuario"];
+$ultimoLogin = "ultimo_inicio_" . $userName;
+$ultimo_inicio = isset($_COOKIE[$ultimoLogin]) ? $_COOKIE[$ultimoLogin] : "Primera vez o sin registros recientes.";
+
+
 include '../includes/conexion.php'; // Asegúrate de que la ruta sea correcta
 
 
@@ -71,6 +86,7 @@ if (!$result_colectivas) {
                 <h1>Escuela de Música</h1>
                 <div>
                     <span class="me-3">Usuario: <?= htmlspecialchars($nombre_profesor) ?></span>
+                    <p class="text-muted small">Último inicio de sesión: <?= $ultimo_inicio ?></p>
                     <a href="../includes/cerrarSesion.php" class="btn btn-danger " >Cerrar Sesión</a>
                 </div>
             </div>
@@ -78,7 +94,7 @@ if (!$result_colectivas) {
     </header>
 
     <div class="d-flex">
-        <nav class="sidebar bg-light p-3" style="width: 250px; height: 100vh; position: fixed;">
+        <nav class="sidebar bg-light p-3" style="width: 250px; height: 100vh; position: fixed; margin-top: 100px;">
             <h3>Asignaturas</h3>
             <ul class="list-unstyled">
                 <li><strong>Tutorías</strong></li>
@@ -95,8 +111,8 @@ if (!$result_colectivas) {
             </ul>
         </nav>
 
-        <div class="container-fluid" style="margin-left: 270px; padding: 20px;">
-            <iframe id="contentFrame" class="w-100 vh-100 border-0 rounded shadow" src="https://www.miconservatorio.es/manuelcastillo" style="margin-top: 60px;"></iframe>
+        <div class="container-fluid" style="margin-left: 270px; margin-top: 100px; padding: 20px;">
+            <iframe id="contentFrame" class="w-100 vh-100 border-0 rounded shadow" src="https://www.miconservatorio.es/manuelcastillo" style="margin-top: 600px;"></iframe>
         </div>
     </div>
 

@@ -22,7 +22,7 @@ $apellidos = !empty($_POST['f_apellidos']) ? mysqli_real_escape_string($conexion
 $id_especialidad = !empty($_POST['f_id_especialidad']) ? (int) $_POST['f_id_especialidad'] : null;
 
 // Construir la consulta SQL
-$sql = "SELECT P.id_profesor, P.nombre, P.apellidos, E.nombre AS especialidad
+$sql = "SELECT P.id_profesor, P.dni, P.nombre, P.apellidos, E.nombre AS especialidad
         FROM Profesores P
         LEFT JOIN Especialidades E ON P.id_especialidad = E.id_especialidad
         WHERE 1=1"; // Para facilitar la concatenación de condiciones
@@ -59,6 +59,7 @@ if (mysqli_num_rows($resultado) > 0) {
     while ($row = mysqli_fetch_assoc($resultado)) {
         echo "<tr>";
         echo "<td>" . $row['id_profesor'] . "</td>";
+        echo "<td>" . $row['dni'] . "</td>";
         echo "<td>" . $row['nombre'] . "</td>";
         echo "<td>" . $row['apellidos'] . "</td>";
         echo "<td>" . ($row['especialidad'] ? $row['especialidad'] : 'No asignada') . "</td>";

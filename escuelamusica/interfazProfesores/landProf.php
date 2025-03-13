@@ -82,7 +82,7 @@ if (!$result_colectivas) {
                 </div>
                 <h1>Escuela de Música</h1>
                 <div>
-                    <span class="me-3">Usuario: <?= htmlspecialchars($nombre_profesor) ?></span>
+                    <span class="me-3">Profesor/a: <?= htmlspecialchars($nombre_profesor) ?></span>
                     <p class="text-muted small">Último inicio de sesión: <?= $ultimo_inicio ?></p>
                     <a href="../includes/cerrarSesion.php" class="btn btn-danger " >Cerrar Sesión</a>
                 </div>

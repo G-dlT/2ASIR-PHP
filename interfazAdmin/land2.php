@@ -41,7 +41,7 @@ $ultimo_inicio = isset($_COOKIE[$ultimoLogin]) ? $_COOKIE[$ultimoLogin] : "Prime
 
     <div class="d-flex ">
         <!-- ---MENU LATERAL---  -->
-        <nav class="sidebar bg-light p-3" style="width: 250px; height: 100vh; position: fixed; margin-left: 15px; margin-top: 100px;">
+        <nav class="sidebar bg-light p-3" style="width: 250px; height: 100vh; position: fixed; margin-left: 15px;">
             <h3>Matriculas</h3>
             <ul class="list-unstyled">
                 <li><a href="#" onclick="changeIframeSrc('matriculas/intDatosAlum.php')"        class="text-decoration-none ">Nuevo ingreso</a></li>

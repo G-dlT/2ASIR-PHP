@@ -61,14 +61,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nota_trimestre1'])) {
         $nota1 = $_POST['nota_trimestre1'][$key];
         $nota2 = $_POST['nota_trimestre2'][$key];
         $nota3 = $_POST['nota_trimestre3'][$key];
-        
-        $sql_update = "UPDATE Asignaciones SET
-                        nota_trimestre1 = '$nota1',
-                        nota_trimestre2 = '$nota2',
-                        nota_trimestre3 = '$nota3'
-                      WHERE id_asignacion = '$id_asignacion'";
 
-        mysqli_query($conexion, $sql_update);
+        // Validar que las notas sean numéricas y estén dentro de un rango
+        if (is_numeric($nota1) && is_numeric($nota2) && is_numeric($nota3)) {
+            $sql_update = "UPDATE Asignaciones SET
+                            nota_trimestre1 = '$nota1',
+                            nota_trimestre2 = '$nota2',
+                            nota_trimestre3 = '$nota3'
+                          WHERE id_asignacion = '$id_asignacion'";
+
+            mysqli_query($conexion, $sql_update);
+        } 
     }
 
     echo '<div class="alert alert-success">Las notas se han actualizado correctamente.</div>';
@@ -135,5 +138,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nota_trimestre1'])) {
 
 <?php
 // Cerrar la conexión
-mysqli_close($conexion);
+//mysqli_close($conexion);
 ?>

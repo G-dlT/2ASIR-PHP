@@ -3,8 +3,8 @@
 
 session_start();
 
-// Asegurar que el usuario es admin
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
+// Asegurar que el usuario es profesor
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'profesor') {
     header("Location: ../login/login.php");
     exit();
 }
@@ -15,14 +15,11 @@ $ultimoLogin = "ultimo_inicio_" . $userName;
 $ultimo_inicio = isset($_COOKIE[$ultimoLogin]) ? $_COOKIE[$ultimoLogin] : "Primera vez o sin registros recientes.";
 
 
-include '../includes/conexion.php'; // Asegúrate de que la ruta sea correcta
+include '../includes/conexion.php'; // 
 
 
 
-if (!isset($_SESSION['id_profesor'])) {
-    header("Location: login.php");
-    exit();
-}
+
 
 $id_profesor = $_SESSION['id_profesor'];
 
@@ -112,7 +109,7 @@ if (!$result_colectivas) {
         </nav>
 
         <div class="container-fluid" style="margin-left: 270px; margin-top: 100px; padding: 20px;">
-            <iframe id="contentFrame" class="w-100 vh-100 border-0 rounded shadow" src="https://www.miconservatorio.es/manuelcastillo" style="margin-top: 600px;"></iframe>
+            <iframe id="contentFrame" class="w-100 vh-100 border-0 rounded shadow" src="https://www.miconservatorio.es/manuelcastillo"></iframe>
         </div>
     </div>
 
